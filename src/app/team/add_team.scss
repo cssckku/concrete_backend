@@ -1,0 +1,57 @@
+
+  body.layout-dark .modal .modal-header {
+    background: #374fe6;
+  }
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border: solid 3px #fff;
+    border-radius: 50%;
+  }
+  option {
+    background-color: #000;
+  }
+   label {
+    color: #bdbdc7;
+    display: inline-block;
+    padding-right: 7px;
+    font-size: 16px;
+    width: 130px;
+  }
+  .form-control {
+    width: calc(100% - 130px);
+    display: inline-block;
+  }
+  .change_img {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - 13px);
+    top: 82px;
+    padding-left: 1px;
+    padding-top: 3px;
+    background-color: black;
+  }
+  td {
+    img {
+      width: 50px;
+    }
+  }
+  
+  ::-webkit-input-placeholder { /* Edge */
+    color: red;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: red;
+  }
+  
+  ::placeholder {
+    color: red !important;
+  }
+  small  {
+    margin-left: 130px;
+  }

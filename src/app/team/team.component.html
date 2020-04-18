@@ -1,0 +1,61 @@
+<ng-template #view let-c="close" let-d="dismiss">
+  
+</ng-template>
+<div class="row text-left">
+  <div class="col-12">
+    <div class="content-header">ทีมงาน</div>
+    <!-- <p class="content-sub-header">All table styles are inherited in Bootstrap 4, meaning any nested tables will be
+      styled in the same manner as the parent.</p> -->
+  </div>
+</div>
+<!--Basic Table Ends-->
+
+<!--Hoverable Rows Starts-->
+<section id="hoverable-rows">
+  <div class="row text-left">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-content">
+
+          <div class="card-body">
+            <div class="text-right">
+              <button style="margin-bottom: 5px;" class="btn  btn-outline-primary" (click)="open({t_id:'0'})"><i
+                  class="fa fa-plus"></i>
+                เพิ่มทีมงาน</button>
+              <!-- <a href="javascript:void(0)" class="btn btn-raised mr-1 btn-round btn-primary"><i class="fa fa-plus"></i> เพิ่มทีมงาน</a> -->
+            </div>
+
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">#</th>
+                  <th style="width: 60px;" class="text-center">ภาพ</th>
+                  <th>ชื่อ - สกุล</th>
+                  <th>ชื่อเข้าใช้งาน</th>
+                  <th>เบอร์โทรศัพท์</th>
+                  <th style="width: 200px;" class="text-center">จัดการ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let t of teams">
+                  <th scope="row">{{t.id}}</th>
+                  <td style="padding: 2px;"><img style="width: 50px;" src="{{t.picture}}"></td>
+                  <td>{{t.name}}</td>
+                  <td>{{t.username}}</td>
+                  <td>{{t.phone}}</td>
+                  <td>
+                    <button href="javascript:void(0)" class="btn btn-raised mr-1 btn-primary btn-sm" (click)="view_profile(t)"  ><i class="fa fa-eye"></i> ดู</button>
+                    <a href="javascript:void(0)" (click)="open(t)"  class="btn btn-raised mr-1 btn-sm btn-warning"><i class="fa fa-edit"></i> แก้ไข</a>
+                    <a href="javascript:void(0)" (click)="delete_member()" class="btn btn-raised mr-1 btn-sm btn-danger"><i class="fa fa-trash-o"></i> ลบ</a>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Hoverable rows Ends-->

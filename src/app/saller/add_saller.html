@@ -1,0 +1,77 @@
+<form [formGroup]="sallerForm" (ngSubmit)="onReactiveFormSubmit()" novalidate>
+    <div class="modal-header">
+        <h4 class="modal-title">เพิ่มทีมงานใหม่</h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="w-100 text-center">
+            <img class="avatar" src="https://image.flaticon.com/icons/svg/194/194938.svg" [src]="para.picture">
+            <a class="change_img" (click)="change_picture()">
+                <i class="fa fa-camera"></i>
+            </a>
+            <input type="file" style="display: none;" #file (change)="file_change($event)">
+        </div>
+        <fieldset class="form-group mt-3">
+            <label for="username">ชื่อผู้ใช้</label>
+            <input type="text" id="username"
+                [ngClass]="{'invalid':!sallerForm.get('username').valid && (sallerForm.get('username').dirty || sallerForm.get('username').touched)}"
+                formControlName="username" name="username" class="form-control round">
+            <small class="form-text text-muted danger"
+                *ngIf="!sallerForm.get('username').valid && (sallerForm.get('username').dirty || sallerForm.get('username').touched)">กรุณากรอกผู้ใช้งานให้ถูกต้อง</small>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="password">รหัสผ่าน</label>
+            <input type="password" id="password"
+                [ngClass]="{'invalid':!sallerForm.get('password').valid && (sallerForm.get('password').dirty || sallerForm.get('password').touched)}"
+                formControlName="password" name="password" class="form-control round">
+            <small class="form-text text-muted danger"
+                *ngIf="!sallerForm.get('password').valid && (sallerForm.get('password').dirty || sallerForm.get('password').touched)">กรุณากรอกรหัสผ่านให้ถูกต้อง</small>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="name">ชื่อ - นามสกุล</label>
+            <input type="text" id="name"
+                [ngClass]="{'invalid':!sallerForm.get('name').valid && (sallerForm.get('name').dirty || sallerForm.get('name').touched)}"
+                formControlName="name" name="name" class="form-control round">
+            <small class="form-text text-muted danger"
+                *ngIf="!sallerForm.get('name').valid && (sallerForm.get('name').dirty || sallerForm.get('name').touched)">กรุณากรอก
+                ชื่อ - นามสกุล ให้ถูกต้อง</small>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="email">อีเมล์</label>
+            <input type="email" id="email"
+                [ngClass]="{'invalid':!sallerForm.get('email').valid && (sallerForm.get('email').dirty || sallerForm.get('email').touched)}"
+                formControlName="email" name="email" class="form-control round">
+            <small class="form-text text-muted danger"
+                *ngIf="!sallerForm.get('email').valid && (sallerForm.get('email').dirty || sallerForm.get('email').touched)">กรุณากรอกอีเมล์ให้ถูกต้อง</small>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="tel">เบอร์โทรศัพท์</label>
+            <input type="text" id="phone"
+                [ngClass]="{'invalid':!sallerForm.get('phone').valid && (sallerForm.get('phone').dirty || sallerForm.get('phone').touched)}"
+                formControlName="phone" class="form-control round">
+            <small class="form-text text-muted danger"
+                *ngIf="!sallerForm.get('phone').valid && (sallerForm.get('phone').dirty || sallerForm.get('phone').touched)">กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง</small>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="gender">เพศ</label>
+            <select id="gender" name="gender" formControlName="gender" class="form-control round">
+                <option selected value="m">ชาย</option>
+                <option value="f">หญิง</option>
+            </select>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="type">ประเภทผู้ใช้งาน</label>
+            <select id="type" name="type" formControlName="type" class="form-control round">
+                <option selected value="1">Admin</option>
+                <option value="2">User</option>
+                <option value="3">Accounting</option>
+            </select>
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-raised" (click)="close()">ปิดออก</button>
+        <button type="submit" class="btn btn-success mr-2 btn-raised ">บันทึก</button>
+    </div>
+</form>
