@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+.content-wrapper {
+  padding: 0px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "kanit";
+  font-weight: 300;
+  line-height: 1.15em;
+}
+.modal-content {
+  border-radius: 5.25rem;
+}
+body.layout-dark .modal .modal-header {
+  background: #009da0;
+}
+.swal2-modal .swal2-cancel {
+  background-color: var(--secondary) !important;
+}
+.invalid {
+  border-color: #ff586b !important;
+}
